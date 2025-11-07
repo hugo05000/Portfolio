@@ -77,6 +77,14 @@
                             <a href="/prestations" class="btn btn-gradient">Voir mes prestations</a>
                             <a href="/contact" class="btn btn-gradient">Me contacter</a>
                         </div>
+                            <div class="d-flex justify-content-center mt-4 mb-2">
+                                <a href="https://www.facebook.com/gapalpesdusud05/" target="_blank" class="me-3">
+                                    <img src="{{ asset('images/github-mark.svg') }}" alt="GitHub" class="social-icon">
+                                </a>
+                                <a href="https://www.instagram.com/gapalpesdusud05/" target="_blank">
+                                    <img src="{{ asset('images/linkedin.svg') }}" alt="Linkedin" class="social-icon">
+                                </a>
+                            </div>
                     </div>
                 </div>
             </div>

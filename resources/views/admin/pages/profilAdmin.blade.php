@@ -103,33 +103,55 @@
                             <div class="card-body">
                                 <h5 class="mb-3">Liste des expériences</h5>
                                 @forelse($experiences as $xp)
-                                    <form action="{{ route('experiences.update', $xp) }}" method="POST" class="border rounded p-3 mb-3">
-                                        @csrf
+                                    <div class="my-4 border rounded p-3">
                                         <div class="row g-2">
-                                            <div class="col-md-6"><input name="entreprise" class="form-control" value="{{ $xp->entreprise }}"></div>
-                                            <div class="col-md-6"><input name="titre" class="form-control" value="{{ $xp->titre }}"></div>
-                                            <div class="col-md-6"><input name="localisation" class="form-control" value="{{ $xp->localisation }}"></div>
-                                            <div class="col-md-3"><input type="date" name="date_de_debut" class="form-control" value="{{ optional($xp->date_de_debut)->format('Y-m-d') }}"></div>
-                                            <div class="col-md-3"><input type="date" name="date_de_fin" class="form-control" value="{{ optional($xp->date_de_fin)->format('Y-m-d') }}"></div>
-                                            <div class="col-md-3 form-check ms-2 mt-2">
-                                                <input type="checkbox" class="form-check-input" name="poste_actuel" {{ $xp->poste_actuel ? 'checked' : '' }}>
-                                                <label class="form-check-label">Actuel</label>
-                                            </div>
-                                            <div class="col-12"><textarea name="description" class="form-control" rows="2">{{ $xp->description }}</textarea></div>
-                                            <div class="col-12 d-flex gap-2">
-                                                <button class="btn btn-outline-primary">Mettre à jour</button>
+                                            <form action="{{ route('experiences.update', $xp) }}" method="POST" class="col-12">
+                                                @csrf
+                                                <div class="row g-2">
+                                                    <div class="col-md-6">
+                                                        <input name="entreprise" class="form-control" placeholder="Nom de l'entreprise" value="{{ $xp->entreprise }}">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input name="titre" class="form-control" placeholder="Titre du poste" value="{{ $xp->titre }}">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input name="localisation" class="form-control" placeholder="Localisation" value="{{ $xp->localisation }}">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input type="date" name="date_de_debut" class="form-control" value="{{ optional($xp->date_de_debut)->format('Y-m-d') }}">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input type="date" name="date_de_fin" class="form-control" value="{{ optional($xp->date_de_fin)->format('Y-m-d') }}">
+                                                    </div>
+                                                    <div class="col-md-3 form-check ms-2 mt-2">
+                                                        <input type="checkbox" class="form-check-input" name="poste_actuel" {{ $xp->poste_actuel ? 'checked' : '' }}>
+                                                        <label class="form-check-label">Actuel</label>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <textarea name="description" class="form-control" rows="2" placeholder="Description de l'expérience">{{ $xp->description }}</textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex justify-content-end align-items-center gap-2 mt-3">
+                                                    <button type="submit" class="btn btn-outline-primary">Mettre à jour</button>
+                                                </div>
+                                            </form>
+
+                                            <div class="d-flex justify-content-end mt-2">
+                                                <form action="{{ route('experiences.delete', $xp) }}" method="POST" onsubmit="return confirm('Supprimer cette expérience ?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-outline-danger">Supprimer</button>
+                                                </form>
                                             </div>
                                         </div>
-                                    </form>
-                                    <form action="{{ route('experiences.delete', $xp) }}" method="POST" onsubmit="return confirm('Supprimer cette expérience ?')">
-                                        @csrf @method('DELETE')
-                                        <button class="btn btn-outline-danger">Supprimer</button>
-                                    </form>
+                                    </div>
                                 @empty
                                     <p class="text-muted mb-0">Aucune expérience pour le moment.</p>
                                 @endforelse
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -158,23 +180,40 @@
                             <div class="card-body">
                                 <h5 class="mb-3">Liste des formations</h5>
                                 @forelse($educations as $ed)
-                                    <form action="{{ route('educations.update', $ed) }}" method="POST" class="border rounded p-3 mb-3">
-                                        @csrf
-                                        <div class="row g-2">
-                                            <div class="col-md-6"><input name="diplome" class="form-control" value="{{ $ed->diplome }}" placeholder="diplome..."></div>
-                                            <div class="col-md-6"><input name="ecole" class="form-control" value="{{ $ed->ecole }}" placeholder="Etablissement..."></div>
-                                            <div class="col-12"><input name="details" class="form-control" value="{{ $ed->details }}" placeholder="Détails..."></div>
-                                            <div class="col-md-4"><input type="number" name="annee_debut" class="form-control" value="{{ $ed->annee_debut }}" placeholder="Année début..."></div>
-                                            <div class="col-md-4"><input type="number" name="annee_fin" class="form-control" value="{{ $ed->annee_fin }}" placeholder="Année fin..."></div>
-                                            <div class="col-12 d-flex gap-2">
-                                                <button class="btn btn-outline-primary">Mettre à jour</button>
+                                    <div class="border rounded p-3 mb-3">
+                                        <form action="{{ route('educations.update', $ed) }}" method="POST">
+                                            @csrf
+                                            <div class="row g-2">
+                                                <div class="col-md-6">
+                                                    <input name="diplome" class="form-control" value="{{ $ed->diplome }}" placeholder="Diplôme...">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input name="ecole" class="form-control" value="{{ $ed->ecole }}" placeholder="Établissement...">
+                                                </div>
+                                                <div class="col-12">
+                                                    <input name="details" class="form-control" value="{{ $ed->details }}" placeholder="Détails...">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="number" name="annee_debut" class="form-control" value="{{ $ed->annee_debut }}" placeholder="Année début...">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="number" name="annee_fin" class="form-control" value="{{ $ed->annee_fin }}" placeholder="Année fin...">
+                                                </div>
                                             </div>
+
+                                            <div class="d-flex justify-content-end align-items-center gap-2 mt-3">
+                                                <button type="submit" class="btn btn-outline-primary">Mettre à jour</button>
+                                            </div>
+                                        </form>
+
+                                        <div class="d-flex justify-content-end mt-2">
+                                            <form action="{{ route('educations.delete', $ed) }}" method="POST" onsubmit="return confirm('Supprimer cette formation ?')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-outline-danger">Supprimer</button>
+                                            </form>
                                         </div>
-                                    </form>
-                                    <form action="{{ route('educations.delete', $ed) }}" method="POST" onsubmit="return confirm('Supprimer cette formation ?')">
-                                        @csrf @method('DELETE')
-                                        <button class="btn btn-outline-danger">Supprimer</button>
-                                    </form>
+                                    </div>
                                 @empty
                                     <p class="text-muted mb-0">Aucune formation pour le moment.</p>
                                 @endforelse
@@ -205,20 +244,31 @@
                             <div class="card-body">
                                 <h5 class="mb-3">Liste des compétences</h5>
                                 @forelse($competences as $sk)
-                                    <form action="{{ route('competences.update', $sk) }}" method="POST" class="border rounded p-3 mb-3">
-                                        @csrf
-                                        <div class="row g-2">
-                                            <div class="col-md-6"><input name="libelle" class="form-control" value="{{ $sk->libelle }}"></div>
-                                            <div class="col-md-6"><input name="categorie" class="form-control" value="{{ $sk->categorie }}"></div>
-                                            <div class="col-12 d-flex gap-2">
-                                                <button class="btn btn-outline-primary">Mettre à jour</button>
+                                    <div class="border rounded p-3 mb-3">
+                                        <form action="{{ route('competences.update', $sk) }}" method="POST">
+                                            @csrf
+                                            <div class="row g-2">
+                                                <div class="col-md-6">
+                                                    <input name="libelle" class="form-control" value="{{ $sk->libelle }}" placeholder="Compétence...">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input name="categorie" class="form-control" value="{{ $sk->categorie }}" placeholder="Catégorie...">
+                                                </div>
                                             </div>
+
+                                            <div class="d-flex justify-content-end align-items-center gap-2 mt-3">
+                                                <button type="submit" class="btn btn-outline-primary">Mettre à jour</button>
+                                            </div>
+                                        </form>
+
+                                        <div class="d-flex justify-content-end mt-2">
+                                            <form action="{{ route('competences.delete', $sk) }}" method="POST" onsubmit="return confirm('Supprimer cette compétence ?')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-outline-danger">Supprimer</button>
+                                            </form>
                                         </div>
-                                    </form>
-                                    <form action="{{ route('competences.delete', $sk) }}" method="POST" onsubmit="return confirm('Supprimer cette compétence ?')">
-                                        @csrf @method('DELETE')
-                                        <button class="btn btn-outline-danger">Supprimer</button>
-                                    </form>
+                                    </div>
                                 @empty
                                     <p class="text-muted mb-0">Aucune compétence pour le moment.</p>
                                 @endforelse

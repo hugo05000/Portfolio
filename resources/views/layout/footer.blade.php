@@ -11,7 +11,16 @@
 
             <!-- Copyright -->
             <div class="col-12 col-md-4 text-center">
-                <small>&copy; {{ date('Y') }} Hugo MARCEAU — Tous droits réservés</small>
+                <small>&copy; {{ date('Y') }} Hugo MARCEAU — Tous droits réservés</small><br>
+                <!-- Boutons sociaux -->
+                <div class="d-flex justify-content-center mt-2 mb-2">
+                    <a href="https://www.facebook.com/gapalpesdusud05/" target="_blank" class="me-3">
+                        <img src="{{ asset('images/github-mark.svg') }}" alt="GitHub" class="social-icon">
+                    </a>
+                    <a href="https://www.instagram.com/gapalpesdusud05/" target="_blank">
+                        <img src="{{ asset('images/linkedin.svg') }}" alt="Linkedin" class="social-icon">
+                    </a>
+                </div>
             </div>
 
             <!-- Liens -->
