@@ -21,6 +21,18 @@
                             <p class="text-muted mb-0">N’hésitez pas à me contacter, je me charge de vous répondre aussi vite que possible. Votre satisfaction, c’est ma priorité !</p>
                         </div>
                         <div>
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <ul class="mb-0">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            @endif
+
                             @if(session('success'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     {{ session('success') }}
@@ -99,7 +111,7 @@
 
                                     <div class="col-12">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="1" id="consent" required>
+                                            <input class="form-check-input" type="checkbox" value="1" id="consent" name="consent" required>
                                             <label class="form-check-label required" for="consent">
                                                 J’accepte que mes informations soient utilisées pour être recontacté.
                                             </label>
