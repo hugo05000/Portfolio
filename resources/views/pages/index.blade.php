@@ -47,7 +47,7 @@
             <!-- Bloc Profil -->
             <div class="col-md-4 col-12 mb-4">
                 <div class="card shadow-sm border-0 h-100">
-                    <img src="{{ asset('/images/profil.jpg') }}" class="card-img-top"
+                    <img src="{{ asset('/images/profil.webp') }}" class="card-img-top"
                          alt="Photo de profil"
                          style="object-fit: cover; height: 200px;">
                     <div class="card-body text-center p-4">
@@ -65,7 +65,7 @@
             <!-- Bloc Prestations -->
             <div class="col-md-4 col-12 mb-4">
                 <div class="card shadow-sm border-0 h-100">
-                    <img src="{{ asset('/images/prestations.jpeg') }}" class="card-img-top"
+                    <img src="{{ asset('/images/prestations.webp') }}" class="card-img-top"
                          alt="Prestations"
                          style="object-fit: cover; height: 200px;">
                     <div class="card-body text-center p-4">
@@ -83,7 +83,7 @@
             <!-- Bloc Contact -->
             <div class="col-md-4 col-12 mb-4">
                 <div class="card shadow-sm border-0 h-100">
-                    <img src="{{ asset('/images/contact.jpeg') }}" class="card-img-top"
+                    <img src="{{ asset('/images/contact.webp') }}" class="card-img-top"
                          alt="Contact"
                          style="object-fit: cover; height: 200px;">
                     <div class="card-body text-center p-4">
