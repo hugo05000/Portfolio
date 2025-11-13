@@ -4,6 +4,8 @@
     Politique de confidentialité
 @endsection
 
+@section('meta_description', "Politique de confidentialité du site hugomarceau.fr.")
+
 @section('header')
     @include('layout.header', ['titre' => 'Politique de confidentialité', 'description' => 'Protection et respect de la vie privée'])
 @endsection

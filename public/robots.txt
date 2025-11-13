@@ -1,2 +1,20 @@
 User-agent: *
-Disallow:
+
+Disallow: /login
+Disallow: /logout
+Disallow: /dashboard
+
+Disallow: /prestations/create
+Disallow: /prestations/
+Disallow: /admin/prestations/
+
+Disallow: /profil/create
+Disallow: /profil/
+Disallow: /experiences
+Disallow: /educations
+Disallow: /competences
+
+Allow: /
+
+Sitemap: https://hugomarceau.fr/sitemap.xml
+

@@ -4,6 +4,8 @@
     Hugo MARCEAU - Contact
 @endsection
 
+@section('meta_description', "Contactez Hugo MARCEAU pour des prestations de développement WEB, des montages et des réparations de PC, des formations aux bases du développement WEB...")
+
 @section('header')
 
     @include('layout.header', ['titre' => 'Me contacter', 'description' => 'Rentrons en contact et discutons...'])

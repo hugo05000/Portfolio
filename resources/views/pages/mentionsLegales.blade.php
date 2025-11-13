@@ -4,6 +4,8 @@
     Mentions légales
 @endsection
 
+@section('meta_description', "Mentions légales site hugomarceau.fr : gestion des données personnelles et conformité RGPD.")
+
 @section('header')
     @include('layout.header', ['titre' => 'Mentions légales', 'description' => 'Informations légales du site'])
 @endsection

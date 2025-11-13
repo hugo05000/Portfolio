@@ -4,6 +4,8 @@
     Portfolio - Hugo MARCEAU
 @endsection
 
+@section('meta_description', "Portfolio d’Hugo Marceau : développeur web et responsable applicatif SI à la CPRPF. Projets, prestations, contact et informations professionnelles.")
+
 @section('header')
 
     @include('layout.header', ['titre' => 'Bienvenue sur mon portfolio', 'description' => 'Responsable applicatif et développeur à ses heures perdus...'])

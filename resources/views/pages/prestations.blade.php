@@ -4,6 +4,8 @@
     Hugo MARCEAU - Prestations
 @endsection
 
+@section('meta_description', "Prestations proposées par Hugo Marceau : création de sites internet, montage de PC sur mesure et formation web pour débutants.")
+
 @section('header')
     @include('layout.header', ['titre' => 'Les prestations proposées', 'description' => 'Développement de site web sur mesure, montage de PC sur mesure, formations WEB...'])
 @endsection

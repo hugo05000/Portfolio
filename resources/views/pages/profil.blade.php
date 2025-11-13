@@ -4,6 +4,8 @@
     Hugo MARCEAU - Profil
 @endsection
 
+@section('meta_description', "Découvrez le parcours d’Hugo Marceau : développeur WEB et Laravel, responsable applicatif SI à la CPRPF, passionné par l'informatique, Docker, DevOps et les technologies modernes.")
+
 @section('header')
     @include('layout.header', ['titre' => 'Mon profil', 'description' => 'Mes activités, mon parcours, mes passions...'])
 @endsection
