@@ -37,7 +37,7 @@
                                 <input name="nom_prenom" class="form-control" value="{{ old('nom_prenom', $profil->nom_prenom) }}" required>
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label">Ville d'origine</label>
+                                <label class="form-label">Ville</label>
                                 <input name="ville" class="form-control" value="{{ old('ville', $profil->ville) }}">
                             </div>
                             <div class="col-md-4">
@@ -63,7 +63,6 @@
                             </div>
                             <div class="col-12">
                                 <button class="btn btn-primary">Enregistrer</button>
-
                             </div>
                         </form>
                         <form action="{{ route('profil.delete', $profil) }}" method="POST" class="d-inline" onsubmit="return confirm('Supprimer le profil ?')">

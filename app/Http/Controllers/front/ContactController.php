@@ -23,6 +23,13 @@ class ContactController extends Controller
             'subject' => 'nullable|string|max:255',
             'message' => 'required|string|max:1200',
             'consent' => 'accepted',
+        ], [
+            'name.required' => 'Veuillez saisir votre nom',
+            'email.required' => 'Veuillez saisir votre email',
+            'motif.required' => 'Veuillez saisir votre motif',
+            'subject.required' => 'Veuillez saisir votre sujet',
+            'message.required' => 'Veuillez saisir votre message',
+            'consent.accepted' => 'Veuillez accepter les conditions d\'utilisation.',
         ]);
 
         try {

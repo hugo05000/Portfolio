@@ -10,8 +10,8 @@
 
 @section('contenu')
     <div class="container py-5">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">Mes prestations</h2>
+        <div class="text-justify mb-5">
+            <h2 class="text-center fw-bold">Mes prestations</h2>
             <p class="text-muted">
                 Développement web, montage de PC personnalisés et formation aux bases du développement... Des services conçus pour répondre avec précision à vos besoins techniques et numériques.
             </p>
@@ -75,7 +75,7 @@
 
                         <div class="card-body p-4">
                             <h5 class="card-title fw-bold mb-2">{{ $prestation->libelle }}</h5>
-                            <p class="card-text text-muted">{{ $prestation->description }}</p>
+                            <p class="card-text text-muted text-justify">{{ $prestation->description }}</p>
                         </div>
 
                         <div class="card-footer bg-transparent border-0 text-center pb-4">

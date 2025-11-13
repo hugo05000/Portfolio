@@ -46,6 +46,7 @@ Route::middleware('auth')->group(function () {
     // Prestations
     Route::get('/prestations/create', [PrestationAdminController::class, 'create'])->name('create.prestation');
     Route::post('/prestations', [PrestationAdminController::class, 'store'])->name('prestations.store');
+    Route::post('/prestations/{prestation}', [PrestationAdminController::class, 'update'])->name('prestations.update');
     Route::delete('prestations/{id}', [PrestationAdminController::class, 'destroy'])->name('prestations.destroy');
     Route::delete('/admin/prestations/photos/{photo}', [PrestationAdminController::class, 'destroyPhoto'])
         ->name('admin.prestations.photos.destroy');

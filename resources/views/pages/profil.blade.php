@@ -69,7 +69,7 @@
 
                         <hr>
 
-                        <p class="mb-3">
+                        <p class="mb-3 text-justify">
                             {{ $profil?->resume ?? "Aucun résumé disponible" }}
                         </p>
 
@@ -113,7 +113,7 @@
                                             @endif
                                         </div>
                                         @if($ed->details)
-                                            <small class="text-muted">{{ $ed->details }}</small>
+                                            <small class="text-muted text-justify">{{ $ed->details }}</small>
                                         @endif
                                     </div>
                                 </li>
@@ -164,7 +164,9 @@
                                                     @endif
                                                 </p>
                                             @endif
-                                            <div>{{ $xp->description }}</div>
+                                            <div>
+                                                <p class="text-justify">{{ $xp->description }}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

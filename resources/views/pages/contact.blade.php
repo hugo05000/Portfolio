@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="card-header text-center py-4">
                             <h2 class="mb-1">Envoyez-moi un message</h2>
-                            <p class="text-muted mb-0">N’hésitez pas à me contacter, je me charge de vous répondre aussi vite que possible. Votre satisfaction, c’est ma priorité !</p>
+                            <p class="text-muted text-justify mb-0">N’hésitez pas à me contacter, je me charge de vous répondre aussi vite que possible. Votre satisfaction, c’est ma priorité !</p>
                         </div>
                         <div>
 
@@ -49,7 +49,7 @@
                         </div>
                         <div class="card-body p-4 p-md-5">
 
-                            <form method="POST" action="{{ route("contact.send") }}" class="needs-validation" novalidate id="contactForm">
+                            <form method="POST" action="{{ route("contact.send") }}" class="needs-validation" id="contactForm">
                                 @csrf
 
                                 {{-- Honeypot anti-spam (ne pas remplir) --}}
@@ -61,7 +61,7 @@
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Votre nom" required>
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Votre nom" value="{{ old('name') }}" required>
                                             <label for="name" class="required">Nom</label>
                                             <div class="invalid-feedback">Indiquez votre nom.</div>
                                         </div>
@@ -69,7 +69,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="nom@exemple.fr" required>
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="nom@exemple.fr" value="{{ old('email') }}"  required>
                                             <label for="email" class="required">Email</label>
                                             <div class="invalid-feedback">Renseignez un email valide.</div>
                                         </div>
@@ -78,11 +78,11 @@
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <select class="form-select" id="motif" name="motif" required>
-                                                <option value="" selected>— Choisissez un motif —</option>
-                                                <option value="site-internet">Création de site internet</option>
-                                                <option value="pc-sur-mesure">Montage d'un PC sur mesure</option>
-                                                <option value="formation-web">Formation web débutant</option>
-                                                <option value="autre">Autre motif</option>
+                                                <option {{ old('motif') == '' ? 'selected' : '' }} disabled>— Choisissez un motif —</option>
+                                                <option value="site-internet" {{ old('motif') == 'site-internet' ? 'selected' : '' }}>Création de site internet</option>
+                                                <option value="pc-sur-mesure" {{ old('motif') == 'pc-sur-mesure' ? 'selected' : '' }}>Montage d'un PC sur mesure</option>
+                                                <option value="formation-web" {{ old('motif') == 'formation-web' ? 'selected' : '' }}>Formation web débutant</option>
+                                                <option value="autre" {{ old('motif') == 'autre' ? 'selected' : '' }}>Autre motif</option>
                                             </select>
                                             <label for="motif" class="required">Motif du contact</label>
                                             <div class="invalid-feedback">Sélectionnez un motif.</div>
@@ -91,7 +91,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Sujet (optionnel)">
+                                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Sujet (optionnel)" value="{{ old('subject') }}">
                                             <label for="subject">Sujet (optionnel)</label>
                                         </div>
                                     </div>
@@ -99,7 +99,7 @@
                                     <div class="col-12">
                                         <div class="form-floating">
                                         <textarea class="form-control" id="message" name="message" style="height: 180px"
-                                                  placeholder="Dites-moi ce que vous souhaitez..." maxlength="1200" required></textarea>
+                                                  placeholder="Dites-moi ce que vous souhaitez..." maxlength="1200" required>{{ old('message') }}</textarea>
                                             <label for="message" class="required">Message</label>
                                             <div class="d-flex justify-content-between mt-2">
                                                 <small class="form-helper">Partagez vos besoins, délais, budget indicatif…</small>

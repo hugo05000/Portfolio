@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\PhotoPrestation;
 use App\Models\Prestation;
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 use Storage;
 
 class PrestationAdminController extends Controller
@@ -26,19 +28,23 @@ class PrestationAdminController extends Controller
 
         $prestation = Prestation::create($data);
 
-        if ($request->hasFile('photos_prestations')) {
-            if ($request->hasFile('photos_prestations')) {
-                foreach ($request->file('photos_prestations', []) as $photo) {
-                    PhotoPrestation::create([
-                        'source'        => $photo->store('photos_prestations', 'public'),
-                        'alt'           => $photo->getClientOriginalName(),
-                        'id_prestation' => $prestation->id,
-                    ]);
-                }
-            }
-        }
+        $this->storeCompressedPhotos($request, $prestation);
 
         return back()->with('success', 'Prestation ajouté');
+    }
+
+    public function update(Request $request, Prestation $prestation) {
+        $data = $request->validate([
+            'libelle' => 'required|string',
+            'description' => 'required|string',
+            'photos_prestations.*' => 'nullable|image',
+        ]);
+
+        $prestation->update($data);
+
+        $this->storeCompressedPhotos($request, $prestation);
+
+        return back()->with('success', 'Prestation modifié');
     }
 
     public function destroy(Request $request) {
@@ -63,6 +69,45 @@ class PrestationAdminController extends Controller
         $photo->delete();
 
         return back()->with('success', 'Photo supprimée');
+    }
+
+    protected function storeCompressedPhotos(Request $request, Prestation $prestation): void
+    {
+        if (!$request->hasFile('photos_prestations')) {
+            return;
+        }
+
+        // Manager v3
+        $manager = new ImageManager(new Driver());
+
+        foreach ($request->file('photos_prestations', []) as $photo) {
+            if (!$photo || !$photo->isValid()) {
+                continue;
+            }
+
+            // Lire l'image (v3: read())
+            $image = $manager->read($photo->getPathname());
+
+            // Redimensionner proprement
+            $image->scale(width: 1600); // 1600px max
+
+            // Encoder JPEG compressé
+            $compressed = $image->toWebp(75);
+
+            // Nouveau nom
+            $filename = uniqid('presta_') . '.webp';
+            $path = 'photos_prestations/' . $filename;
+
+            // Sauvegarde
+            Storage::disk('public')->put($path, $compressed);
+
+            // Enregistrement DB
+            PhotoPrestation::create([
+                'source'        => $path,
+                'alt'           => $photo->getClientOriginalName(),
+                'id_prestation' => $prestation->id,
+            ]);
+        }
     }
 
 }

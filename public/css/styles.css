@@ -126,3 +126,7 @@ nav {
     height: 20px;
     transition: transform 0.2s ease;
 }
+
+.text-justify {
+    text-align: justify;
+}
