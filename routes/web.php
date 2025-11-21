@@ -1,17 +1,17 @@
 <?php
 
 use App\Http\Controllers\admin\AuthController;
+use App\Http\Controllers\admin\ClientAdminController;
 use App\Http\Controllers\admin\PrestationAdminController;
 use App\Http\Controllers\admin\ProfilAdminController;
 use App\Http\Controllers\front\ContactController;
+use App\Http\Controllers\front\HomeController;
 use App\Http\Controllers\front\PrestationController;
 use App\Http\Controllers\front\ProfilController;
 use Illuminate\Support\Facades\Route;
 
 // Index
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 // Mention légales
 Route::get('/mentions-legales', function () {
@@ -69,5 +69,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/competences', [ProfilAdminController::class, 'storeCompetence'])->name('competences.store');
     Route::post('/competences/{competence}', [ProfilAdminController::class, 'updateCompetence'])->name('competences.update');
     Route::delete('/competences/{competence}', [ProfilAdminController::class, 'deleteCompetence'])->name('competences.delete');
+
+    //Client
+    Route::get('/client/create', [ClientAdminController::class, 'create'])->name('create.client');
+    Route::post('/client', [ClientAdminController::class, 'store'])->name('clients.store');    Route::post('/client/{client}', [ClientAdminController::class, 'update'])->name('clients.update');
+    Route::delete('/client/{client}', [ClientAdminController::class, 'destroy'])->name('clients.destroy');
 
 });

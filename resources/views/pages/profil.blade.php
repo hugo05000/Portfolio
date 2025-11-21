@@ -12,23 +12,6 @@
 
 @section('contenu')
 
-    @php
-        // Sécurités + calculs
-        $birth = $profil?->date_de_naissance;
-        $age = $birth ? \Carbon\Carbon::parse($birth)->age : null;
-
-        // Groupes de compétences
-        $competencesList = ($competences ?? collect())->where('categorie', 'Compétences');
-        $interetsList    = ($competences ?? collect())->where('categorie', 'Intérêts');
-
-        // Si aucune catégorie exacte n'existe, on répartit par défaut
-        if($competencesList->isEmpty() && $interetsList->isEmpty()) {
-            $half = ceil(($competences ?? collect())->count() / 2);
-            $competencesList = ($competences ?? collect())->take($half);
-            $interetsList    = ($competences ?? collect())->skip($half);
-        }
-    @endphp
-
     <div class="container py-5">
         <div class="row g-4">
             <!-- Colonne gauche : Carte identité -->
@@ -59,11 +42,11 @@
                                     <span>{{ $profil?->ville ?? 'Aucune ville disponible' }}</span>
                                 </div>
                             </div>
-                            @if($birth)
+                            @if($profil?->date_de_naissance)
                                 <div class="col-12">
                                     <div class="d-flex align-items-center">
                                         <span class="me-2">🎂</span>
-                                        <span>{{ \Carbon\Carbon::parse($birth)->translatedFormat('d F Y') }} — {{ $age }} ans</span>
+                                        <span>{{ \Carbon\Carbon::parse($profil?->date_de_naissance)->translatedFormat('d F Y') }} — {{ \Carbon\Carbon::parse($profil?->date_de_naissance)->age }} ans</span>
                                     </div>
                                 </div>
                             @endif
@@ -188,7 +171,7 @@
                             <div class="col-12 col-md-6">
                                 <h6 class="text-muted">Compétences</h6>
                                 <div class="d-flex flex-wrap gap-2">
-                                    @forelse($competencesList as $c)
+                                    @forelse($competences as $c)
                                         <span class="badge bg-secondary">{{ $c->libelle }}</span>
                                     @empty
                                         <p>Aucune données disponibles</p>
@@ -198,7 +181,7 @@
                             <div class="col-12 col-md-6">
                                 <h6 class="text-muted">Intérêts</h6>
                                 <div class="d-flex flex-wrap gap-2">
-                                    @forelse($interetsList as $i)
+                                    @forelse($interets as $i)
                                         <span class="badge bg-light text-dark border">{{ $i->libelle }}</span>
                                     @empty
                                         <p>Aucune données disponibles</p>

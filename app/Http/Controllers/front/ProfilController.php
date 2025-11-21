@@ -20,10 +20,19 @@ class ProfilController extends Controller
         $educations = Education::orderByDesc('annee_fin')
             ->get();
 
-        $competences = Competences::orderBy('categorie', 'asc')
-            ->orderBy('libelle', 'asc')
-            ->get();
+        $allCompetences = Competences::all();
 
-        return view('pages.profil', compact('profil', 'experiences', 'educations', 'competences'));
+        $competenceVariants = [
+            'Compétence',
+            'competence',
+            'compétence',
+            'Compétences',
+            'compétences',
+            'competences',
+        ];
+        $competences = $allCompetences->whereIn('categorie', $competenceVariants);
+        $interets = $allCompetences->whereNotIn('categorie',$competenceVariants);
+
+        return view('pages.profil', compact('profil', 'experiences', 'educations', 'competences', 'interets'));
     }
 }

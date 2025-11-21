@@ -19,6 +19,30 @@ header {
     opacity: 0;
 }
 
+/** Trait sous les H2 **/
+.title-gradient-underline {
+    position: relative;
+    display: inline-block; /* Permet au trait de s'adapter à la largeur du texte */
+    padding-bottom: 10px;  /* Espace entre le texte et le trait */
+    margin-bottom: 20px;   /* Espace sous le tout */
+}
+
+.title-gradient-underline::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%); /* Centre parfaitement le trait */
+
+    /* Dimensions du trait */
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+
+    /* Ton dégradé spécifique */
+    background: linear-gradient(135deg, rgba(13, 101, 237, 0.7), rgba(32, 201, 151, 0.7));
+}
+
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -129,4 +153,39 @@ nav {
 
 .text-justify {
     text-align: justify;
+}
+
+
+.accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, rgba(13, 101, 237, 0.7), rgba(32, 201, 151, 0.7));
+    color: white;
+    border-color: #0d6efd;
+}
+
+/***** ACCUEIL *****/
+
+/** Clients **/
+
+/* La boîte qui contient le logo */
+.client-box {
+    background-color: #ffffff; /* Fond blanc pour contraster avec le fond gris de la page */
+    border: 1px solid rgba(0,0,0,0.05); /* Bordure quasi invisible */
+    transition: all 0.3s ease-in-out;
+    min-height: 100px; /* Hauteur unifiée */
+}
+
+/* Effet au survol */
+.client-box:hover {
+    transform: translateY(-5px); /* Petite remontée */
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1); /* Ombre plus marquée */
+    border-color: transparent;
+}
+
+/* L'image du logo */
+.client-logo {
+    max-height: 65px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+    /* Pas de filtre grayscale ici, on garde les couleurs */
 }

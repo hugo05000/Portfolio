@@ -19,7 +19,7 @@
                 <div class="col-12 col-lg-10 col-xxl-8">
                     <div class="card">
                         <div class="card-header text-center py-4">
-                            <h2 class="mb-1">Envoyez-moi un message</h2>
+                            <h2 class="title-gradient-underline mb-3">Envoyez-moi un message</h2>
                             <p class="text-muted text-justify mb-0">N’hésitez pas à me contacter, je me charge de vous répondre aussi vite que possible. Votre satisfaction, c’est ma priorité !</p>
                         </div>
                         <div>

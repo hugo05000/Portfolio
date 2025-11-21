@@ -12,17 +12,21 @@
 
 @section('contenu')
     <div class="container py-5">
-        <div class="text-justify mb-5">
-            <h2 class="text-center fw-bold">Mes prestations</h2>
-            <p class="text-muted">
-                Développement web, montage de PC personnalisés et formation aux bases du développement... Des services conçus pour répondre avec précision à vos besoins techniques et numériques.
-            </p>
-            <p class="text-muted">
-                Que vous soyez particulier, entrepreneur ou professionnel, je m’adonne à la création, à l’optimisation et à l’accompagnement numérique, avec rigueur, clarté et un suivi personnalisé.
-            </p>
-            <i class="text-muted">
-                💡 Je ne fais pas que « répondre », je vous aide à avancer, à construire, à réussir.
-            </i>
+        <div class="mb-5">
+            <div class="text-center">
+                <h2 class="title-gradient-underline text-center fw-bold">Mes prestations</h2>
+            </div>
+            <div class="text-justify ">
+                <p class="text-muted">
+                    Développement web, montage de PC personnalisés et formation aux bases du développement... Des services conçus pour répondre avec précision à vos besoins techniques et numériques.
+                </p>
+                <p class="text-muted">
+                    Que vous soyez particulier, entrepreneur ou professionnel, je m’adonne à la création, à l’optimisation et à l’accompagnement numérique, avec rigueur, clarté et un suivi personnalisé.
+                </p>
+                <i class="text-muted">
+                    💡 Je ne fais pas que « répondre », je vous aide à avancer, à construire, à réussir.
+                </i>
+            </div>
         </div>
 
         <div class="row g-4">
