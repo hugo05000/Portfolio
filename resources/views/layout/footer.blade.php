@@ -14,10 +14,10 @@
                 <small>&copy; {{ date('Y') }} Hugo MARCEAU — Tous droits réservés</small><br>
                 <!-- Boutons sociaux -->
                 <div class="d-flex justify-content-center mt-2 mb-2">
-                    <a href="https://www.facebook.com/gapalpesdusud05/" target="_blank" class="me-3">
+                    <a href="https://github.com/hugo05000" target="_blank" class="me-3">
                         <img src="{{ asset('images/github-mark.svg') }}" alt="GitHub" class="social-icon">
                     </a>
-                    <a href="https://www.instagram.com/gapalpesdusud05/" target="_blank">
+                    <a href="https://www.linkedin.com/in/hugo-marceau-ab6a74213/" target="_blank">
                         <img src="{{ asset('images/linkedin.svg') }}" alt="Linkedin" class="social-icon">
                     </a>
                 </div>
