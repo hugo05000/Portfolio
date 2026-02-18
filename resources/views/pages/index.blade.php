@@ -27,12 +27,12 @@
                             <p class="card-text text-muted mb-2">
                                 Je m'appelle Hugo MARCEAU, j'ai
                                 {{ \Carbon\Carbon::create(2001, 1, 15)->age }}
-                                ans et je suis Responsable applicatif SI chez la CPRPF.
+                                ans et je suis Responsable applicatif SI à la CPRPF.
                             </p>
 
                             <p class="card-text text-muted mb-2">
-                                Je conçois, maintiens et améliore des applications métiers. En parallèle, je développe des sites web,
-                                j’assemble des PC sur mesure et je forme aux bases du développement web.
+                                Je conçois, maintiens et améliore des applications métiers. En parallèle, j'aide les particulier à développer des sites web,
+                                j’assemble des PC sur mesure et je forme aux bases du développement web. Basé à Aix-en-Provence, je mets mon expertise au service de vos projets, quels qu’ils soient.
                             </p>
 
                             <p class="card-text text-muted">
@@ -76,7 +76,7 @@
                     <div class="card-body text-center p-4">
                         <h5 class="card-title fw-bold mb-2">Prestations</h5>
                         <p class="card-text text-muted">
-                            Développement web sur mesure, montage et réparation PC, formation web.
+                            Aide au développement web sur mesure, montage et réparation PC, formation web.
                         </p>
                         <a href="{{ route('index.prestations') }}" class="btn btn-gradient px-3">
                             Voir les prestations
