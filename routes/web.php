@@ -76,3 +76,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/client/{client}', [ClientAdminController::class, 'destroy'])->name('clients.destroy');
 
 });
+
+Route::get('/cron/mail-check/{token}', function ($token) {
+    $secretToken = config('services.cron.token');
+
+    if (!$secretToken || $token !== $secretToken) {
+        abort(403, 'Accès refusé');
+    }
+
+    try {
+        Artisan::call('mail:check');
+        return "Cron exécuté avec succès !";
+    } catch (\Exception $e) {
+        return "Erreur : " . $e->getMessage();
+    }
+});

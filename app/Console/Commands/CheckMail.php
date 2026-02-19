@@ -49,6 +49,7 @@ class CheckMail extends Command
             }
         } catch (\Exception $e) {
             $this->error("Erreur : " . $e->getMessage());
+            dump($e);
         }
 
     }
