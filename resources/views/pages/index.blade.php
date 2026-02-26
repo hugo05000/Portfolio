@@ -1,14 +1,14 @@
 @extends('layout.app')
 
 @section('title')
-    Portfolio - Hugo MARCEAU
+    Hugo MARCEAU | Développeur Web et responsable applicatif sur Aix-en-Provence et Marseille
 @endsection
 
 @section('meta_description', "Portfolio d’Hugo Marceau : développeur web et responsable applicatif SI à la CPRPF. Projets, prestations, contact et informations professionnelles.")
 
 @section('header')
 
-    @include('layout.header', ['titre' => 'Bienvenue sur mon portfolio', 'description' => 'Responsable applicatif et développeur à ses heures perdus...'])
+    @include('layout.header', ['titre' => 'Bienvenue sur mon portfolio', 'description' => 'Responsable applicatif et développeur Web dans la métropole d\'Aix-Marseille.'])
 
 @endsection
 
@@ -21,7 +21,7 @@
                 <div class="card bg-light shadow-sm border-0 h-100">
                     <div class="card-body py-4 px-4">
                         <div class="text-center">
-                            <h2 class="card-title mb-3 fw-bold title-gradient-underline ">Qui suis-je ?</h2>
+                            <h2 class="card-title mb-3 fw-bold title-gradient-underline ">Votre informaticien sur Aix-en-Provence et ses alentours.</h2>
                         </div>
                         <div class="text-justify">
                             <p class="card-text text-muted mb-2">
@@ -31,7 +31,7 @@
                             </p>
 
                             <p class="card-text text-muted mb-2">
-                                Je conçois, maintiens et améliore des applications métiers. En parallèle, j'aide les particulier à développer des sites web,
+                                Je conçois, maintiens et améliore des applications métiers. En parallèle, j'aide les particuliers à développer des sites web,
                                 j’assemble des PC sur mesure et je forme aux bases du développement web. Basé à Aix-en-Provence, je mets mon expertise au service de vos projets, quels qu’ils soient.
                             </p>
 
@@ -53,7 +53,7 @@
             <div class="col-md-4 col-12 mb-4">
                 <div class="card shadow-sm border-0 h-100">
                     <img src="{{ asset('/images/profil.webp') }}" class="card-img-top"
-                         alt="Photo de profil"
+                         alt="Hugo Marceau - Développeur Web Aix-en-Provence"
                          style="object-fit: cover; height: 200px;">
                     <div class="card-body text-center p-4">
                         <h5 class="card-title fw-bold mb-2">Profil</h5>
@@ -71,7 +71,7 @@
             <div class="col-md-4 col-12 mb-4">
                 <div class="card shadow-sm border-0 h-100">
                     <img src="{{ asset('/images/prestations.webp') }}" class="card-img-top"
-                         alt="Prestations"
+                         alt="Prestations Hugo Marceau - Développeur Web Aix-en-Provence"
                          style="object-fit: cover; height: 200px;">
                     <div class="card-body text-center p-4">
                         <h5 class="card-title fw-bold mb-2">Prestations</h5>
@@ -89,7 +89,7 @@
             <div class="col-md-4 col-12 mb-4">
                 <div class="card shadow-sm border-0 h-100">
                     <img src="{{ asset('/images/contact.webp') }}" class="card-img-top"
-                         alt="Contact"
+                         alt="Contact Hugo Marceau - Développeur Web Aix-en-Provence"
                          style="object-fit: cover; height: 200px;">
                     <div class="card-body text-center p-4">
                         <h5 class="card-title fw-bold mb-2">Contact</h5>
@@ -103,6 +103,25 @@
                 </div>
             </div>
         </div>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="row text-center mb-4">
+                    <div class="col-12">
+                        <h3 class="fw-bold">Mes outils de prédilection</h3>
+                        <p class="text-muted">Les technologies que j'utilise au quotidien pour vous aider à concevoir vos solutions.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center text-center g-3">
+                    <div class="col-auto"><span class="badge bg-secondary px-3 py-2 fs-6">Laravel</span></div>
+                    <div class="col-auto"><span class="badge bg-secondary px-3 py-2 fs-6">PHP</span></div>
+                    <div class="col-auto"><span class="badge bg-secondary px-3 py-2 fs-6">MySQL / SQL Server</span></div>
+                    <div class="col-auto"><span class="badge bg-secondary px-3 py-2 fs-6">Wordpress</span></div>
+                    <div class="col-auto"><span class="badge bg-secondary px-3 py-2 fs-6">Shopify</span></div>
+                    <div class="col-auto"><span class="badge bg-secondary px-3 py-2 fs-6">Montage et dépannage de PC</span></div>
+                </div>
+            </div>
+        </section>
 
         <section class="py-5 bg-light"> <div class="container">
                 <div class="row justify-content-center mb-5">
