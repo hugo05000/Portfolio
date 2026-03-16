@@ -193,7 +193,7 @@
                         <hr class="my-4">
 
                         <div class="alert alert-gradient mb-0" role="alert">
-                            Envie d’échanger sur un besoin applicatif ou un projet web&nbsp;? <a href="/contact" class="alert-link">Contacte-moi</a>.
+                            Envie d’échanger sur un besoin applicatif ou un projet web&nbsp;? <a href="/contact" class="alert-link">Contactez-moi</a>.
                         </div>
                     </div>
                 </div>
