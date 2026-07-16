@@ -19,7 +19,7 @@ class ContactController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'motif'   => 'required|string|in:site-internet,pc-sur-mesure,formation-web,autre',
+            'motif'   => 'required|string|in:question-professionnelle,projet-web,demande-information,autre',
             'subject' => 'nullable|string|max:255',
             'message' => 'required|string|max:1200',
             'consent' => 'accepted',

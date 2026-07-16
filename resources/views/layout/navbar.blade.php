@@ -10,9 +10,6 @@
                     <a class="nav-link" href="{{ route('index.profil') }}">Profil</a>
                 </li>
                 <li class="nav-item mx-md-2">
-                    <a class="nav-link" href="{{ route('index.prestations') }}">Prestations</a>
-                </li>
-                <li class="nav-item mx-md-2">
                     <a class="nav-link" href="{{ route('index.contact') }}">Contact</a>
                 </li>
             </ul>

@@ -4,7 +4,7 @@
     Hugo MARCEAU - Contact
 @endsection
 
-@section('meta_description', "Contactez Hugo MARCEAU pour des prestations de développement WEB, des montages et des réparations de PC, des formations aux bases du développement WEB...")
+@section('meta_description', "Contactez Hugo MARCEAU pour échanger autour d'un projet web, d'une question professionnelle ou d'une demande d'information.")
 
 @section('header')
 
@@ -81,9 +81,9 @@
                                         <div class="form-floating">
                                             <select class="form-select" id="motif" name="motif" required>
                                                 <option {{ old('motif') == '' ? 'selected' : '' }} disabled>— Choisissez un motif —</option>
-                                                <option value="site-internet" {{ old('motif') == 'site-internet' ? 'selected' : '' }}>Création de site internet</option>
-                                                <option value="pc-sur-mesure" {{ old('motif') == 'pc-sur-mesure' ? 'selected' : '' }}>Montage d'un PC sur mesure</option>
-                                                <option value="formation-web" {{ old('motif') == 'formation-web' ? 'selected' : '' }}>Formation web débutant</option>
+                                                <option value="question-professionnelle" {{ old('motif') == 'question-professionnelle' ? 'selected' : '' }}>Question professionnelle</option>
+                                                <option value="projet-web" {{ old('motif') == 'projet-web' ? 'selected' : '' }}>Projet web ou applicatif</option>
+                                                <option value="demande-information" {{ old('motif') == 'demande-information' ? 'selected' : '' }}>Demande d'information</option>
                                                 <option value="autre" {{ old('motif') == 'autre' ? 'selected' : '' }}>Autre motif</option>
                                             </select>
                                             <label for="motif" class="required">Motif du contact</label>
@@ -104,7 +104,7 @@
                                                   placeholder="Dites-moi ce que vous souhaitez..." maxlength="1200" required>{{ old('message') }}</textarea>
                                             <label for="message" class="required">Message</label>
                                             <div class="d-flex justify-content-between mt-2">
-                                                <small class="form-helper">Partagez vos besoins, délais, budget indicatif…</small>
+                                                <small class="form-helper">Partagez le contexte utile à votre message.</small>
                                                 <small class="text-muted"><span id="charCount">0</span>/1200</small>
                                             </div>
                                             <div class="invalid-feedback">Le message est requis.</div>

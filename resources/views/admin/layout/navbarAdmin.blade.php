@@ -10,9 +10,6 @@
                     <a class="nav-link" href="{{ route('create.client') }}">Client</a>
                 </li>
                 <li class="nav-item mx-md-2">
-                    <a class="nav-link" href="{{ route('create.prestation') }}">Prestations</a>
-                </li>
-                <li class="nav-item mx-md-2">
                     <a class="nav-link" href="{{ route('create.profil') }}">Profil</a>
                 </li>
             </ul>
@@ -23,4 +20,3 @@
         </form>
     </div>
 </nav>
-

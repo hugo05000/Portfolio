@@ -4,7 +4,7 @@
     Hugo MARCEAU | Développeur Web et responsable applicatif sur Aix-en-Provence et Marseille
 @endsection
 
-@section('meta_description', "Portfolio d’Hugo Marceau : développeur web et responsable applicatif SI à la CPRPF. Projets, prestations, contact et informations professionnelles.")
+@section('meta_description', "Portfolio d’Hugo Marceau : développeur web et responsable applicatif SI à la CPRPF. Profil, contact et informations professionnelles.")
 
 @section('header')
 
@@ -31,14 +31,12 @@
                             </p>
 
                             <p class="card-text text-muted mb-2">
-                                Je conçois, maintiens et améliore des applications métiers. En parallèle, j'aide les particuliers à développer des sites web,
-                                j’assemble des PC sur mesure et je forme aux bases du développement web. Basé à Aix-en-Provence, je mets mon expertise au service de vos projets, quels qu’ils soient.
+                                Je conçois, maintiens et améliore des applications métiers. Basé à Aix-en-Provence, je mets mon expertise au service de projets web et applicatifs.
                             </p>
 
                             <p class="card-text text-muted">
                                 Sur ce portfolio, vous trouverez&nbsp;:
                                 <span class="fw-semibold">mon profil</span>,
-                                <span class="fw-semibold">les prestations que je propose</span>
                                 et <span class="fw-semibold">un moyen de me contacter</span>.
                             </p>
                         </div>
@@ -47,10 +45,10 @@
             </div>
         </div>
 
-        <!-- Cartes principales : Profil / Prestations / Contact -->
-        <div class="row">
+        <!-- Cartes principales : Profil / Contact -->
+        <div class="row justify-content-center">
             <!-- Bloc Profil -->
-            <div class="col-md-4 col-12 mb-4">
+            <div class="col-md-5 col-12 mb-4">
                 <div class="card shadow-sm border-0 h-100">
                     <img src="{{ asset('/images/profil.webp') }}" class="card-img-top"
                          alt="Hugo Marceau - Développeur Web Aix-en-Provence"
@@ -67,26 +65,8 @@
                 </div>
             </div>
 
-            <!-- Bloc Prestations -->
-            <div class="col-md-4 col-12 mb-4">
-                <div class="card shadow-sm border-0 h-100">
-                    <img src="{{ asset('/images/prestations.webp') }}" class="card-img-top"
-                         alt="Prestations Hugo Marceau - Développeur Web Aix-en-Provence"
-                         style="object-fit: cover; height: 200px;">
-                    <div class="card-body text-center p-4">
-                        <h5 class="card-title fw-bold mb-2">Prestations</h5>
-                        <p class="card-text text-muted">
-                            Aide au développement web sur mesure, montage et réparation PC, formation web.
-                        </p>
-                        <a href="{{ route('index.prestations') }}" class="btn btn-gradient px-3">
-                            Voir les prestations
-                        </a>
-                    </div>
-                </div>
-            </div>
-
             <!-- Bloc Contact -->
-            <div class="col-md-4 col-12 mb-4">
+            <div class="col-md-5 col-12 mb-4">
                 <div class="card shadow-sm border-0 h-100">
                     <img src="{{ asset('/images/contact.webp') }}" class="card-img-top"
                          alt="Contact Hugo Marceau - Développeur Web Aix-en-Provence"
@@ -109,7 +89,7 @@
                 <div class="row text-center mb-4">
                     <div class="col-12">
                         <h3 class="fw-bold">Mes outils de prédilection</h3>
-                        <p class="text-muted">Les technologies que j'utilise au quotidien pour vous aider à concevoir vos solutions.</p>
+                        <p class="text-muted">Les technologies que j'utilise au quotidien dans mon activité.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center text-center g-3">
@@ -118,7 +98,6 @@
                     <div class="col-auto"><span class="badge bg-secondary px-3 py-2 fs-6">MySQL / SQL Server</span></div>
                     <div class="col-auto"><span class="badge bg-secondary px-3 py-2 fs-6">Wordpress</span></div>
                     <div class="col-auto"><span class="badge bg-secondary px-3 py-2 fs-6">Shopify</span></div>
-                    <div class="col-auto"><span class="badge bg-secondary px-3 py-2 fs-6">Montage et dépannage de PC</span></div>
                 </div>
             </div>
         </section>
