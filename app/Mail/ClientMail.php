@@ -31,7 +31,7 @@ class ClientMail extends Mailable
     {
         return new Envelope(
             replyTo: [ new Address($this->data['email'], $this->data['name']) ],
-            subject: $this->data['name'] . ' - ' . $this->data['motif'],
+            subject: $this->data['name'] . ' - ' . $this->data['subject'],
         );
     }
 

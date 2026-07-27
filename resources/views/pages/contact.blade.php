@@ -4,11 +4,11 @@
     Hugo MARCEAU - Contact
 @endsection
 
-@section('meta_description', "Contactez Hugo MARCEAU pour échanger autour d'un projet web, d'une question professionnelle ou d'une demande d'information.")
+@section('meta_description', "Contactez Hugo Marceau, responsable applicatif SI à Aix-en-Provence, pour échanger autour d'une opportunité professionnelle ou d'une question sur son parcours.")
 
 @section('header')
 
-    @include('layout.header', ['titre' => 'Me contacter', 'description' => 'Rentrons en contact et discutons...'])
+    @include('layout.header', ['titre' => 'Me contacter', 'description' => 'Échangeons sur votre besoin ou votre opportunité.'])
 
 @endsection
 
@@ -20,7 +20,7 @@
                     <div class="card">
                         <div class="card-header text-center py-4">
                             <h2 class="title-gradient-underline mb-3">Envoyez-moi un message</h2>
-                            <p class="text-muted text-justify mb-0">N’hésitez pas à me contacter, je me charge de vous répondre aussi vite que possible. Votre satisfaction, c’est ma priorité !</p>
+                            <p class="text-muted text-justify mb-0">Recruteur, manager ou simplement curieux de mon parcours : écrivez-moi, je réponds rapidement à chaque message.</p>
                         </div>
                         <div>
 
@@ -77,23 +77,9 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-floating">
-                                            <select class="form-select" id="motif" name="motif" required>
-                                                <option {{ old('motif') == '' ? 'selected' : '' }} disabled>— Choisissez un motif —</option>
-                                                <option value="question-professionnelle" {{ old('motif') == 'question-professionnelle' ? 'selected' : '' }}>Question professionnelle</option>
-                                                <option value="projet-web" {{ old('motif') == 'projet-web' ? 'selected' : '' }}>Projet web ou applicatif</option>
-                                                <option value="demande-information" {{ old('motif') == 'demande-information' ? 'selected' : '' }}>Demande d'information</option>
-                                                <option value="autre" {{ old('motif') == 'autre' ? 'selected' : '' }}>Autre motif</option>
-                                            </select>
-                                            <label for="motif" class="required">Motif du contact</label>
-                                            <div class="invalid-feedback">Sélectionnez un motif.</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Sujet (optionnel)" value="{{ old('subject') }}">
+                                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Sujet" value="{{ old('subject') }}">
                                             <label for="subject">Sujet (optionnel)</label>
                                         </div>
                                     </div>

@@ -10,7 +10,6 @@
 
     <p><strong>Nom :</strong> {{ $data['name'] }}</p>
     <p><strong>Email :</strong> {{ $data['email'] }}</p>
-    <p><strong>Motif :</strong> {{ $data['motif'] }}</p>
     <p><strong>Sujet :</strong> {{ $data['subject'] }}</p>
     <p><strong>Message :</strong></p>
     <div style="background-color: #f5f5f5; padding: 15px; border-left: 4px solid #34495e; border-radius: 5px; white-space: pre-line;">

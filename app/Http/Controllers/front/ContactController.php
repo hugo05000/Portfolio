@@ -19,21 +19,19 @@ class ContactController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'motif'   => 'required|string|in:question-professionnelle,projet-web,demande-information,autre',
-            'subject' => 'nullable|string|max:255',
+            'subject' => 'required|string|max:255',
             'message' => 'required|string|max:1200',
             'consent' => 'accepted',
         ], [
             'name.required' => 'Veuillez saisir votre nom',
             'email.required' => 'Veuillez saisir votre email',
-            'motif.required' => 'Veuillez saisir votre motif',
             'subject.required' => 'Veuillez saisir votre sujet',
             'message.required' => 'Veuillez saisir votre message',
             'consent.accepted' => 'Veuillez accepter les conditions d\'utilisation.',
         ]);
 
         try {
-            $data = $request->only(['name','email','motif','subject','message']);
+            $data = $request->only(['name','email','subject','message']);
 
             $to = env('MAIL_TO', config('mail.from.address', 'contact@hugomarceau.fr'));
 

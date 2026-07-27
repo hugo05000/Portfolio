@@ -22,16 +22,20 @@ class ProfilController extends Controller
 
         $allCompetences = Competences::all();
 
-        $competenceVariants = [
-            'Compétence',
-            'competence',
-            'compétence',
-            'Compétences',
-            'compétences',
-            'competences',
+        $interestVariants = [
+            'Intérêt',
+            'intérêt',
+            'Intérêts',
+            'intérêts',
+            'Interet',
+            'interet',
+            'Interets',
+            'interets',
+            'Sport',
+            'sport',
         ];
-        $competences = $allCompetences->whereIn('categorie', $competenceVariants);
-        $interets = $allCompetences->whereNotIn('categorie',$competenceVariants);
+        $competences = $allCompetences->whereNotIn('categorie', $interestVariants);
+        $interets = $allCompetences->whereIn('categorie', $interestVariants);
 
         return view('pages.profil', compact('profil', 'experiences', 'educations', 'competences', 'interets'));
     }
