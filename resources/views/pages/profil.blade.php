@@ -4,12 +4,12 @@
     Hugo MARCEAU - Responsable applicatif : profil, compétences et parcours
 @endsection
 
-@section('meta_description', "Profil d’Hugo Marceau, responsable applicatif du SI Retraite à la CPRPF : pilotage applicatif, spécifications, tests et mises en production. Basé à Aix-en-Provence, mobile région de Marseille.")
+@section('meta_description', "Profil d’Hugo Marceau, responsable applicatif du SI Retraite à la CPRPF : MCO, besoins métier, évolutions réglementaires, recette et suivi des incidents.")
 
 @section('header')
     @include('layout.header', [
         'titre' => 'Profil professionnel',
-        'description' => 'Pilotage applicatif, parcours et compétences.'
+        'description' => 'Mon parcours et ma manière de faire vivre les applications métier.'
     ])
 @endsection
 
@@ -41,22 +41,20 @@
                     </div>
 
                     <h2 class="h3 text-center mb-2">{{ $profilName }}</h2>
-                    <p class="text-center text-muted mb-4">{{ $profil?->en_tete ?? 'Responsable applicatif SI Retraite · CPRPF' }}</p>
+                    <p class="text-center text-muted mb-4">{{ $profil?->en_tete ?? 'Responsable applicatif · SI Retraite' }}</p>
 
                     <dl class="profile-facts">
                         <div>
                             <dt>Localisation</dt>
                             <dd>{{ $profil?->ville ?? 'Aix-en-Provence / Marseille' }}</dd>
                         </div>
-                        @if($profil?->date_de_naissance)
-                            <div>
-                                <dt>Profil</dt>
-                                <dd>{{ \Carbon\Carbon::parse($profil?->date_de_naissance)->age }} ans, responsable applicatif au croisement du métier et de la technique</dd>
-                            </div>
-                        @endif
                         <div>
                             <dt>Mobilité</dt>
-                            <dd>Aix-en-Provence et région de Marseille. Ouvert aux échanges professionnels.</dd>
+                            <dd>Région d’Aix-en-Provence et de Marseille</dd>
+                        </div>
+                        <div>
+                            <dt>Spécialité</dt>
+                            <dd>Pilotage et maintien en condition opérationnelle des applications métier</dd>
                         </div>
                     </dl>
 
@@ -78,32 +76,33 @@
 
             <div class="col-12 col-lg-8">
                 <div class="profile-summary h-100">
-                    <p class="section-eyebrow mb-2">Synthèse</p>
-                    <h1 class="profile-title mb-3">Responsable applicatif : je fais le lien entre les besoins métier et les équipes de développement.</h1>
+                    <p class="section-eyebrow mb-2">Ma démarche</p>
+                    <h2 class="profile-title mb-3">Faire le lien entre les besoins métier et la réalité technique.</h2>
                     <p class="lead text-muted mb-4">
-                        {{ $profil?->resume ?? "Responsable applicatif au sein du SI Retraite de la CPRPF, je pilote un périmètre applicatif de bout en bout : analyse des besoins utilisateurs, spécifications techniques, suivi des développements, tests et mises en production. Mon passé de développeur web me permet de dialoguer efficacement avec les équipes techniques." }}
+                        {{ $profil?->resume ?? "Au sein du SI Retraite de la CPRPF, j’assure le suivi d’un périmètre applicatif sur tout son cycle de vie. Je recueille les besoins, cadre les évolutions, accompagne les développements et la recette, puis veille à la qualité du service rendu en production." }}
                     </p>
+                    <p class="text-muted mb-4">Au quotidien, SAFe structure la coordination des évolutions et ITIL guide le suivi du service en production.</p>
 
                     <div class="row g-3">
                         <div class="col-12 col-md-4">
                             <div class="proof-box h-100">
                                 <span>01</span>
-                                <strong>Analyser et spécifier</strong>
-                                <p>Recueil des besoins utilisateurs, cadrage des demandes et rédaction des spécifications techniques.</p>
+                                <strong>Écouter et cadrer</strong>
+                                <p>Comprendre les usages et traduire les demandes en solutions fonctionnelles.</p>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="proof-box h-100">
                                 <span>02</span>
-                                <strong>Concevoir et suivre</strong>
-                                <p>Conception des solutions, suivi des développements et cohérence entre le besoin exprimé et le livré.</p>
+                                <strong>Coordonner et livrer</strong>
+                                <p>Suivre les développeurs, les tests, la recette et les mises en production.</p>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="proof-box h-100">
                                 <span>03</span>
-                                <strong>Tester et déployer</strong>
-                                <p>Pilotage des tests, sécurisation des mises en production et accompagnement des utilisateurs au déploiement.</p>
+                                <strong>Maintenir et améliorer</strong>
+                                <p>Assurer le MCO, résoudre les incidents et suivre la qualité avec l’appui de SQL.</p>
                             </div>
                         </div>
                     </div>
@@ -113,33 +112,39 @@
 
         <section class="mb-5" id="expertise">
             <div class="section-heading">
-                <p class="section-eyebrow mb-2">Expertise</p>
-                <h2 class="section-title">Mes axes de compétence</h2>
+                <p class="section-eyebrow mb-2">Au quotidien</p>
+                <h2 class="section-title">Mes missions en détail</h2>
             </div>
 
             <div class="row g-4">
                 <div class="col-12 col-md-6">
                     <article class="expertise-detail h-100">
-                        <h3>Analyse des besoins et spécifications</h3>
-                        <p>Recueil et cadrage des besoins des utilisateurs métier, rédaction de spécifications techniques claires et priorisation des évolutions du périmètre applicatif.</p>
+                        <h3>Pilotage et MCO</h3>
+                        <p>Je suis responsable du suivi global de mon périmètre : continuité de service, maintenance et évolution de l’application dans la durée.</p>
                     </article>
                 </div>
                 <div class="col-12 col-md-6">
                     <article class="expertise-detail h-100">
-                        <h3>Pilotage des développements et des mises en production</h3>
-                        <p>Conception et suivi des développements, pilotage des campagnes de tests, sécurisation des mises en production et accompagnement au déploiement des nouvelles fonctionnalités.</p>
+                        <h3>Évolutions logicielle</h3>
+                        <p>Je cadre les changements, conçois l'architecture applicative, organise les tests et la recette, prépare la mise en production et suis les premières utilisations.</p>
                     </article>
                 </div>
                 <div class="col-12 col-md-6">
                     <article class="expertise-detail h-100">
-                        <h3>Maintenance applicative et relation métier</h3>
-                        <p>Coordination de la maintenance, traitement et priorisation des demandes, documentation et lien permanent avec les utilisateurs métier.</p>
+                        <h3>Accompagnement métier</h3>
+                        <p>Je recueille et analyse les besoins, mène le cadrage fonctionnel et reste disponible pour les utilisateurs dans le suivi quotidien.</p>
                     </article>
                 </div>
                 <div class="col-12 col-md-6">
                     <article class="expertise-detail h-100">
-                        <h3>Méthodes et culture technique</h3>
-                        <p>Projets menés en SCRUM dans un cadre SAFe, expérience du cycle en V, et un passé de développeur web (Laravel/PHP, SQL) qui facilite les échanges avec les équipes techniques.</p>
+                        <h3>Coordination technique</h3>
+                        <p>Je garde un lien continu avec les développeurs pour suivre les réalisations et vérifier leur alignement avec le besoin métier.</p>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6">
+                    <article class="expertise-detail h-100">
+                        <h3>Incidents et qualité</h3>
+                        <p>J’analyse et résous les incidents utilisateurs. Je réalise également des tests de non régression et des tests fonctionnelles afin de m'assurer de la qualité du produit.</p>
                     </article>
                 </div>
             </div>
@@ -150,7 +155,7 @@
                 <div class="sticky-section-heading">
                     <p class="section-eyebrow mb-2">Expériences</p>
                     <h2 class="section-title">Mon parcours professionnel</h2>
-                    <p class="text-muted mb-0">Une progression du développement vers la responsabilité applicative, avec une constante : le lien entre les utilisateurs et la technique.</p>
+                    <p class="text-muted mb-0">Du développement web à la responsabilité applicative, avec un même fil conducteur : rendre les outils utiles et fiables pour leurs utilisateurs.</p>
                 </div>
             </div>
             <div class="col-12 col-lg-8">
@@ -192,7 +197,7 @@
                             <div class="timeline-marker"></div>
                             <div>
                                 <h3 class="h5 mb-2">Responsable applicatif SI Retraite</h3>
-                                <p class="mb-0">Les expériences renseignées depuis l’administration seront affichées ici.</p>
+                                <p class="mb-0">Pilotage d’un périmètre applicatif en lien avec les équipes métier et techniques, de l’évolution des besoins au suivi en production.</p>
                             </div>
                         </article>
                     @endforelse
@@ -204,8 +209,8 @@
             <div class="col-12 col-lg-5">
                 <div class="section-panel h-100">
                     <p class="section-eyebrow mb-2">Compétences</p>
-                    <h2 class="section-title mb-3">Le pilotage applicatif d’abord, la technique en appui.</h2>
-                    <p class="text-muted mb-0">Analyse, spécification, tests, mises en production : des compétences de pilotage renforcées par une pratique réelle du développement.</p>
+                    <h2 class="section-title mb-3">Des compétences au service de la continuité.</h2>
+                    <p class="text-muted mb-0">Des méthodes de suivi fonctionnel et une culture technique mobilisées pour faire avancer les sujets, de la demande à la production.</p>
                 </div>
             </div>
 
@@ -225,11 +230,11 @@
                             <h3>Pilotage applicatif</h3>
                             <div class="skills-cloud">
                                 <span>Analyse des besoins</span>
-                                <span>Spécifications techniques</span>
-                                <span>Pilotage des tests</span>
-                                <span>Mises en production</span>
-                                <span>SCRUM / SAFe</span>
-                                <span>PHP / Laravel</span>
+                                <span>Cadrage fonctionnel</span>
+                                <span>MCO</span>
+                                <span>Recette</span>
+                                <span>Gestion des incidents</span>
+                                <span>SQL</span>
                             </div>
                         </div>
                     @endforelse
@@ -248,14 +253,15 @@
             </div>
         </section>
 
+        @if(($educations ?? collect())->count())
         <section class="row g-4 align-items-start mb-5" id="formations">
             <div class="col-12 col-lg-4">
                 <p class="section-eyebrow mb-2">Formation</p>
-                <h2 class="section-title">Parcours scolaire</h2>
+                <h2 class="section-title">Mon parcours de formation</h2>
             </div>
             <div class="col-12 col-lg-8">
                 <div class="education-list">
-                    @forelse(($educations ?? collect())->sortByDesc('annee_fin') as $ed)
+                    @foreach(($educations ?? collect())->sortByDesc('annee_fin') as $ed)
                         <article class="education-item">
                             <span class="education-year">{{ $ed->annee_debut }} - {{ $ed->annee_fin }}</span>
                             <div>
@@ -268,12 +274,11 @@
                                 @endif
                             </div>
                         </article>
-                    @empty
-                        <p class="text-muted mb-0">Les formations seront affichées ici dès qu’elles seront renseignées.</p>
-                    @endforelse
+                    @endforeach
                 </div>
             </div>
         </section>
+        @endif
 
         <section class="section-panel recruiter-panel">
             <div class="row g-4 align-items-center">

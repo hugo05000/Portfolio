@@ -18,10 +18,8 @@
 
                 <h5>1. Éditeur du site</h5>
                 <p>
-                    Ce site est édité par <strong>Hugo MARCEAU</strong>, auto-entrepreneur.<br>
-                    SIRET : 991 648 536 00019<br>
+                    Ce site est édité par <strong>Hugo MARCEAU</strong>.<br>
                     Email : <a href="mailto:contact@hugomarceau.fr">contact@hugomarceau.fr</a><br>
-                    Siège social : 4 Rue Achille Emperaire, 13090 Aix-en-Provence, France.
                 </p>
 
                 <h5>2. Hébergeur</h5>

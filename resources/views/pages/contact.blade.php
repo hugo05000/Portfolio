@@ -8,19 +8,34 @@
 
 @section('header')
 
-    @include('layout.header', ['titre' => 'Me contacter', 'description' => 'Échangeons sur votre besoin ou votre opportunité.'])
+    @include('layout.header', ['titre' => 'Échangeons', 'description' => 'Une question sur mon parcours ou un projet applicatif à discuter ?'])
 
 @endsection
 
 @section('contenu')
-    <div class="py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-10 col-xxl-8">
-                    <div class="card">
-                        <div class="card-header text-center py-4">
-                            <h2 class="title-gradient-underline mb-3">Envoyez-moi un message</h2>
-                            <p class="text-muted text-justify mb-0">Recruteur, manager ou simplement curieux de mon parcours : écrivez-moi, je réponds rapidement à chaque message.</p>
+    <main class="contact-page py-5">
+        <div class="row g-5 align-items-start">
+            <div class="col-12 col-lg-4">
+                <aside class="contact-aside">
+                    <p class="section-eyebrow mb-3">Prendre contact</p>
+                    <h2 class="section-title mb-4">La conversation commence ici.</h2>
+                    <p>Vous recrutez, pilotez un projet ou souhaitez simplement en savoir plus sur mon parcours ? Écrivez-moi quelques lignes et je vous répondrai dès que possible.</p>
+                    <div class="contact-detail mt-5">
+                        <span>Localisation</span>
+                        <strong>Aix-en-Provence · région de Marseille</strong>
+                    </div>
+                    <div class="contact-detail">
+                        <span>Réseau professionnel</span>
+                        <a href="https://www.linkedin.com/in/hugo-marceau-ab6a74213/" target="_blank" rel="noopener noreferrer">Retrouvez-moi sur LinkedIn <span aria-hidden="true">↗</span></a>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-12 col-lg-8">
+                <div class="contact-card">
+                        <div class="contact-card-heading">
+                            <p class="section-eyebrow mb-2">Votre message</p>
+                            <h2 class="h3 mb-2">Parlons de votre besoin</h2>
+                            <p class="text-muted mb-0">Quelques informations suffisent pour démarrer l’échange.</p>
                         </div>
                         <div>
 
@@ -49,7 +64,7 @@
                                 </div>
                             @endif
                         </div>
-                        <div class="card-body p-4 p-md-5">
+                        <div class="contact-card-body">
 
                             <form method="POST" action="{{ route("contact.send") }}" class="needs-validation" id="contactForm">
                                 @csrf
@@ -120,9 +135,8 @@
                                 </p>
                             </form>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 @endsection

@@ -1,23 +1,22 @@
-<footer class="bg-light text-center text-lg-start border-top mt-5">
-    <div class="container py-4">
+<div class="site-footer">
+    <div class="container py-5">
         <div class="row gy-3 align-items-center">
 
             <!-- Identité -->
             <div class="col-12 col-md-4 text-md-start">
-                <strong>Hugo MARCEAU</strong><br>
-                Auto-entrepreneur<br>
-                SIRET : 991 648 536 00019
+                <strong>Hugo Marceau</strong><br>
+                <span>Responsable applicatif · Aix-en-Provence</span>
             </div>
 
             <!-- Copyright -->
             <div class="col-12 col-md-4 text-center">
-                <small>&copy; {{ date('Y') }} Hugo MARCEAU — Tous droits réservés</small><br>
+                <small>&copy; {{ date('Y') }} Hugo Marceau</small><br>
                 <!-- Boutons sociaux -->
                 <div class="d-flex justify-content-center mt-2 mb-2">
-                    <a href="https://github.com/hugo05000" target="_blank" class="me-3">
+                    <a href="https://github.com/hugo05000" target="_blank" rel="noopener noreferrer" class="me-3" aria-label="Profil GitHub de Hugo Marceau">
                         <img src="{{ asset('images/github-mark.svg') }}" alt="GitHub" class="social-icon">
                     </a>
-                    <a href="https://www.linkedin.com/in/hugo-marceau-ab6a74213/" target="_blank">
+                    <a href="https://www.linkedin.com/in/hugo-marceau-ab6a74213/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn de Hugo Marceau">
                         <img src="{{ asset('images/linkedin.svg') }}" alt="Linkedin" class="social-icon">
                     </a>
                 </div>
@@ -45,4 +44,4 @@
             </div>
         </div>
     </div>
-</footer>
+</div>
