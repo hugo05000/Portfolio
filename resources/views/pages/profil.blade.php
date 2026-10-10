@@ -118,31 +118,31 @@
 
             <div class="row g-4">
                 <div class="col-12 col-md-6">
-                    <article class="expertise-detail h-100">
+                    <article class="expertise-detail art-pilotage h-100">
                         <h3>Pilotage et MCO</h3>
                         <p>Je suis responsable du suivi global de mon périmètre : continuité de service, maintenance et évolution de l’application dans la durée.</p>
                     </article>
                 </div>
                 <div class="col-12 col-md-6">
-                    <article class="expertise-detail h-100">
+                    <article class="expertise-detail art-evolution h-100">
                         <h3>Évolutions logicielle</h3>
                         <p>Je cadre les changements, conçois l'architecture applicative, organise les tests et la recette, prépare la mise en production et suis les premières utilisations.</p>
                     </article>
                 </div>
                 <div class="col-12 col-md-6">
-                    <article class="expertise-detail h-100">
+                    <article class="expertise-detail art-metier h-100">
                         <h3>Accompagnement métier</h3>
                         <p>Je recueille et analyse les besoins, mène le cadrage fonctionnel et reste disponible pour les utilisateurs dans le suivi quotidien.</p>
                     </article>
                 </div>
                 <div class="col-12 col-md-6">
-                    <article class="expertise-detail h-100">
+                    <article class="expertise-detail art-coordination h-100">
                         <h3>Coordination technique</h3>
                         <p>Je garde un lien continu avec les développeurs pour suivre les réalisations et vérifier leur alignement avec le besoin métier.</p>
                     </article>
                 </div>
                 <div class="col-12 col-md-6">
-                    <article class="expertise-detail h-100">
+                    <article class="expertise-detail art-qualite h-100">
                         <h3>Incidents et qualité</h3>
                         <p>J’analyse et résous les incidents utilisateurs. Je réalise également des tests de non régression et des tests fonctionnelles afin de m'assurer de la qualité du produit.</p>
                     </article>

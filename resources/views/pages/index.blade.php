@@ -54,35 +54,35 @@
             </div>
             <div class="row g-3">
                 <div class="col-12 col-md-6 col-xl-4">
-                    <article class="expertise-card h-100">
+                    <article class="expertise-card art-evolution h-100">
                         <span class="expertise-index">01</span>
                         <h3>Évolutions applicatives</h3>
                         <p>Cadrage, conception, tests, recette, préparation de la mise en production et suivi après livraison.</p>
                     </article>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
-                    <article class="expertise-card h-100">
+                    <article class="expertise-card art-pilotage h-100">
                         <span class="expertise-index">02</span>
                         <h3>Pilotage applicatif</h3>
                         <p>Maintien en condition opérationnelle et suivi du cycle de vie de mon périmètre applicatif.</p>
                     </article>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
-                    <article class="expertise-card h-100">
+                    <article class="expertise-card art-metier h-100">
                         <span class="expertise-index">03</span>
                         <h3>Accompagnement métier</h3>
                         <p>Recueil et analyse des besoins, cadrage fonctionnel et suivi quotidien auprès des utilisateurs.</p>
                     </article>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
-                    <article class="expertise-card h-100">
+                    <article class="expertise-card art-coordination h-100">
                         <span class="expertise-index">04</span>
                         <h3>Coordination technique</h3>
                         <p>Alignement continu avec les développeurs et suivi rapproché des réalisations.</p>
                     </article>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
-                    <article class="expertise-card h-100">
+                    <article class="expertise-card art-qualite h-100">
                         <span class="expertise-index">05</span>
                         <h3>Incidents et qualité</h3>
                         <p>Analyse et résolution des incidents des utilisateurs. Tests fonctionnelles et tests de non régression. </p>

@@ -351,6 +351,35 @@ html { scroll-behavior: smooth; }
 .sticky-section-heading { position: sticky; top: 2rem; }
 .education-item { grid-template-columns: minmax(120px, auto) 1fr; }
 .education-year { color: #4d7b5c; font-size: .9rem; font-weight: 800; }
+.art-evolution { --article-art: url('../images/article-evolution.svg'); }
+.art-pilotage { --article-art: url('../images/article-pilotage.svg'); }
+.art-metier { --article-art: url('../images/article-metier.svg'); }
+.art-coordination { --article-art: url('../images/article-coordination.svg'); }
+.art-qualite { --article-art: url('../images/article-qualite.svg'); }
+.mini-timeline-item,
+.timeline-card { --article-art: url('../images/article-pilotage.svg'); }
+.education-item { --article-art: url('../images/article-evolution.svg'); }
+.portfolio-home article,
+.profile-page article { isolation: isolate; overflow: hidden; position: relative; }
+.portfolio-home article::before,
+.profile-page article::before {
+    background: linear-gradient(90deg, rgba(255,255,255,.96), rgba(255,255,255,.58)), var(--article-art) center / cover no-repeat;
+    content: "";
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: opacity .35s ease;
+    z-index: -1;
+}
+.portfolio-home article:hover::before,
+.profile-page article:hover::before { opacity: 1; }
+.mini-timeline-item,
+.timeline-card,
+.education-item { transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.mini-timeline-item:hover,
+.timeline-card:hover,
+.education-item:hover { border-color: var(--accent); box-shadow: 0 14px 32px rgba(18, 55, 40, .07); transform: translateY(-3px); }
 .skills-group { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 1.35rem; }
 .skills-group h3 { font-size: 1rem; font-weight: 750; margin-bottom: 1rem; }
 .site-body .badge.text-bg-success { background: #dcebdd !important; color: #285037 !important; font-weight: 700; }
